@@ -1,30 +1,37 @@
+import { Link, NavLink } from "react-router-dom"
+
 const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "Portofolio", href: "#portofolio" },
-    { label: "Services", href: "#services" },
+    { label: "Home", to: "/" },
+    { label: "Portofolio", to: "/portofolio" },
+    { label: "Services", to: "/services" },
 ]
 
 export default function Navbar() {
     return (
         <nav className="w-full bg-[#E9E9E9] flex flex-row items-center justify-between px-4 py-3 rounded-lg">
-            <a href="#home" className="flex items-center">
+            <Link to="/" className="flex items-center">
                 <img
                     src="/logo/sleepermanz-vertical.svg"
                     alt="sleepermanz-logo"
                     className="h-12 w-auto object-contain"
                 />
-            </a>
+            </Link>
 
             <div className="flex flex-row items-center gap-8">
-                {navItems.map((item, index) => (
-                    <a
+                {navItems.map((item) => (
+                    <NavLink
                         key={item.label}
-                        href={item.href}
-                        className={`text-sm uppercase text-black hover:opacity-70 transition-opacity ${index === 0 ? "font-bold" : "font-normal"
-                            }`}
+                        to={item.to}
+                        // `end` pada "/" agar Home tidak ikut aktif di halaman lain
+                        end={item.to === "/"}
+                        className={({ isActive }) =>
+                            `text-sm uppercase text-black hover:opacity-70 transition-opacity ${
+                                isActive ? "font-bold" : "font-normal"
+                            }`
+                        }
                     >
                         {item.label}
-                    </a>
+                    </NavLink>
                 ))}
 
                 <div className="relative isolate">
