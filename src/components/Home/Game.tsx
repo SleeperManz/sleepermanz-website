@@ -103,7 +103,7 @@ export default function Game() {
                 <div className="h-px w-full bg-black" />
             </header>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-12 py-12 px-38 md:grid-cols-2 lg:grid-cols-3">
                 {games.map((game) => {
                     const style = statusStyle[game.status]
                     const isDev = game.status === "development"
@@ -142,14 +142,14 @@ export default function Game() {
 
                                     {isDev ? (
                                         <span
-                                            className={`h-9.5 rounded px-3 py-1.5 text-base font-bold uppercase text-white ${style.button}`}
+                                            className={`w-fit rounded px-3 py-1.5 text-base font-bold uppercase text-white ${style.button}`}
                                         >
                                             {style.label}
                                         </span>
                                     ) : (
                                         <a
                                             href={game.href}
-                                            className={`h-9.5 rounded px-3 py-1.5 text-base font-bold uppercase text-white transition-opacity hover:opacity-80 ${style.button}`}
+                                            className={`w-fit rounded px-3 py-1.5 text-base font-bold uppercase text-white transition-opacity hover:opacity-80 ${style.button}`}
                                         >
                                             {style.label}
                                         </a>

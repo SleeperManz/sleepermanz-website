@@ -37,7 +37,7 @@ export default function Capabilities() {
                 <div className="h-px w-full bg-black" />
             </header>
 
-            <div className="flex w-full flex-col gap-14 p-9 md:flex-row">
+            <div className="flex w-full flex-col gap-14 py-12 px-28 md:flex-row">
                 {/* Gambar tunggal: mengambil sisa lebar */}
                 <div className="relative isolate h-fit flex-1/4">
                     <img
@@ -80,14 +80,14 @@ export default function Capabilities() {
             </div>
 
             {/* Tools */}
-            <div className="mx-9 relative">
+            <div className="mx-18 relative">
                 <img
                     src="src/assets/etc/stylish-background-wide.png"
                     alt="stylish-background-wide"
                     className="absolute inset-0 w-full h-full translate-x-2 translate-y-2 -z-1"
                 />
 
-                <div className="flex flex-col items-center gap-6 border-3 border-black bg-white px-6 py-4">
+                <div className="w-full h-full flex flex-col items-center gap-8 border-3 border-black bg-white p-6">
                     <h2 className="text-5xl font-bold uppercase">Tools</h2>
 
                     <ul className="flex flex-row flex-wrap w-full items-center justify-evenly gap-6">

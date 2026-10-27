@@ -8,7 +8,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
     return (
         <div className="flex w-40 flex-col items-center">
             <div
-                className={`h-72.5 w-72.5`}
+                className={`h-50 w-50`}
             >
                 {member.image && (
                     <img
@@ -20,10 +20,10 @@ export default function TeamCard({ member }: { member: TeamMember }) {
                 )}
             </div>
 
-            <h3 className="mt-3 text-[40px] font-bold uppercase leading-tight">
+            <h3 className="mt-3 text-[28px] font-bold uppercase leading-tight">
                 {member.name}
             </h3>
-            <p className="text-[32px]">{member.role}</p>
+            <p className="text-[24px]">{member.role}</p>
         </div>
     )
 }

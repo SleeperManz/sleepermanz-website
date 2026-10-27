@@ -19,12 +19,12 @@ export default function SpecializeCard({
                 className="absolute inset-0 w-full h-full translate-x-1 translate-y-px -z-1"
             />
 
-            <div className={`flex min-h-80 flex-col gap-1 overflow-hidden border-4 border-black px-6 py-6 ${color}`}>
+            <div className={`w-full h-full flex min-h-80 flex-col gap-3 overflow-hidden border-4 border-black px-6 py-6 ${color}`}>
                 <h2 className="text-5xl font-bold uppercase leading-tight">
                     {title}
                 </h2>
 
-                <p className="max-w-[70%] pl-3 text-4xl leading-snug">
+                <p className="max-w-[80%] pl-3 text-3xl leading-snug">
                     {description}
                 </p>
 

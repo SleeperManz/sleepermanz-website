@@ -48,7 +48,7 @@ export default function OurWork() {
                     <div className="h-px w-full bg-black" />
                 </header>
 
-                <p className="text-center text-3xl leading-snug">
+                <p className="text-center text-[32px] leading-snug">
                     A bunch of things we&apos;ve made along the way.
                     <br />
                     Games, art, animation, and experiments from our studio.
@@ -89,8 +89,8 @@ export default function OurWork() {
             </div>
 
             {/* Galeri */}
-            <div className="w-full p-6">
-                <div className="grid grid-cols-3 gap-3">
+            <div className="w-full mb-24">
+                <div className="grid grid-cols-3 gap-3 px-12 py-4">
                     {items.map((item, index) => (
                         <div
                             key={item.src ?? index}

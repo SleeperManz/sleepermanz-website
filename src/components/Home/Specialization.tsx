@@ -35,7 +35,7 @@ export default function Specialization() {
                 <div className="h-px w-full bg-black" />
             </header>
 
-            <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="w-full grid grid-cols-1 gap-8 py-12 px-28 md:grid-cols-2">
                 {specializations.map((item, index) => (
                     <SpecializeCard
                         key={item.title}

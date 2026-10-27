@@ -166,9 +166,9 @@ const groups: ServiceGroup[] = [
 
 export default function WeBuild() {
     return (
-        <section id="services" className="flex w-full flex-col gap-8">
-            <div className="flex flex-col items-center justify-center gap-3">
-                <header className="flex w-full flex-row items-center gap-6">
+        <section id="services" className="flex w-full flex-col gap-4 mb-12">
+            <div className="flex flex-col items-center justify-center">
+                <header className="flex w-full flex-row items-center gap-6 mb-12">
                     <div className="h-px w-full bg-black" />
                     <h1 className="shrink-0 text-center text-5xl font-bold uppercase leading-[0.95] md:text-6xl">
                         What Can We
@@ -178,19 +178,19 @@ export default function WeBuild() {
                     <div className="h-px w-full bg-black" />
                 </header>
 
-                <p className="max-w-3xl text-center text-4xl leading-snug">
+                <p className="max-w-3xl text-center text-[32px] leading-snug">
                     From game development to art and animation, we help turn
                     ideas into playable experiences.
                 </p>
             </div>
 
             {groups.map((group) => (
-                <div key={group.title} className="w-full flex flex-col items-center justify-center gap-12 my-24">
-                    <h2 className="text-6xl font-bold uppercase leading-none">
+                <div key={group.title} className="w-full flex flex-col items-center justify-center gap-8 my-8">
+                    <h2 className="text-5xl font-bold uppercase leading-none">
                         {`[ ${group.title} ]`}
                     </h2>
 
-                    <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="w-full grid grid-cols-1 gap-12 py-12 px-24 md:grid-cols-2">
                         {group.services.map((service) => (
                             <ServiceCard key={service.title} {...service} />
                         ))}
