@@ -95,15 +95,19 @@ const games: GameItem[] = [
 
 export default function Game() {
     return (
-        <section id="game" className="flex flex-col gap-6 my-6">
-            <header className="flex flex-row items-center gap-6 mb-6">
-                <h1 className="shrink-0 text-center text-5xl font-bold uppercase leading-[0.95] md:text-6xl">
+        <section id="game" className="flex flex-col gap-2 my-2 md:gap-6 md:my-6">
+            <header className="flex flex-row items-center justify-center gap-3 mb-2 md:gap-6 md:mb-6">
+                <h1 className="shrink-0 text-center text-2xl font-bold uppercase leading-[0.95] sm:text-4xl md:text-6xl">
                     Game
                 </h1>
-                <div className="h-px w-full bg-black" />
+                <div className="hidden h-px w-full bg-black md:block" />
             </header>
 
-            <div className="grid grid-cols-1 gap-12 py-12 px-38 md:grid-cols-2 lg:grid-cols-3">
+            {/*
+              Padding samping besar (px-38) hanya untuk desktop lebar (lg ke atas).
+              Di mobile tanpa padding tambahan, supaya kartu memakai lebar penuh.
+            */}
+            <div className="grid grid-cols-1 gap-8 py-6 px-0 md:grid-cols-2 md:gap-12 md:py-12 md:px-12 lg:grid-cols-3 lg:px-38">
                 {games.map((game) => {
                     const style = statusStyle[game.status]
                     const isDev = game.status === "development"
@@ -127,29 +131,33 @@ export default function Game() {
                                 />
 
                                 <div className="flex flex-1 flex-col gap-1 px-1">
-                                    <h2 className="text-[24px] font-bold uppercase">
+                                    <h2 className="text-xl font-bold uppercase md:text-[24px]">
                                         {game.title}
                                     </h2>
-                                    <p className="text-base leading-snug text-black">
+                                    <p className="text-sm leading-snug text-black md:text-base">
                                         {game.description}
                                     </p>
                                 </div>
 
-                                <div className="flex flex-row items-center justify-between px-1 pb-1 pt-3">
+                                {/*
+                                  flex-wrap: kalau tag + tombol tidak muat sebaris (kartu sempit),
+                                  tombol otomatis turun ke baris berikutnya dan tetap rata kanan (ml-auto).
+                                */}
+                                <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 px-1 pb-1 pt-3">
                                     <span className={`text-xs uppercase ${style.text}`}>
                                         {game.tags.join(" . ")}
                                     </span>
 
                                     {isDev ? (
                                         <span
-                                            className={`w-fit rounded px-3 py-1.5 text-base font-bold uppercase text-white ${style.button}`}
+                                            className={`ml-auto w-fit rounded px-3 py-1.5 text-sm font-bold uppercase text-white md:text-base ${style.button}`}
                                         >
                                             {style.label}
                                         </span>
                                     ) : (
                                         <a
                                             href={game.href}
-                                            className={`w-fit rounded px-3 py-1.5 text-base font-bold uppercase text-white transition-opacity hover:opacity-80 ${style.button}`}
+                                            className={`ml-auto w-fit rounded px-3 py-1.5 text-sm font-bold uppercase text-white transition-opacity hover:opacity-80 md:text-base ${style.button}`}
                                         >
                                             {style.label}
                                         </a>

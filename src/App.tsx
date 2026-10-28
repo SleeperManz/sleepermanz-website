@@ -21,7 +21,8 @@ function App() {
     <>
       <ScrollToTop />
 
-      <div className="py-6 px-16">
+      {/* Padding kecil di mobile, lebar di desktop */}
+      <div className="w-full px-4 py-4 md:px-16 md:py-6">
         <Navbar />
       </div>
 

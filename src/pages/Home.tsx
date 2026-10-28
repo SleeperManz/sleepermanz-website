@@ -7,7 +7,7 @@ import Specialization from "../components/Home/Specialization";
 
 export default function Home() {
     return (
-        <div className="flex flex-col mx-20 gap-24">
+        <div className="flex flex-col mx-4 gap-4 md:mx-20 md:gap-24">
             <Hero />
             <Game />
             <Specialization />

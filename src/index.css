@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+body {
+    margin: 0;
+    min-width: 320px;
+    /* Pengaman: konten yang kebetulan melebihi lebar layar tidak membuat halaman bisa digeser ke samping */
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+}

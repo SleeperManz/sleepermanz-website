@@ -27,15 +27,15 @@ const specializations = [
 
 export default function Specialization() {
     return (
-        <section id="specialization" className="flex flex-col gap-6 my-6">
-            <header className="flex flex-row items-center gap-6 mb-6">
-                <h1 className="shrink-0 text-center text-5xl font-bold uppercase leading-[0.95] md:text-6xl">
+        <section id="specialization" className="flex flex-col gap-2 my-2 md:gap-6 md:my-6">
+            <header className="flex flex-row items-center justify-center gap-3 mb-2 md:gap-6 md:mb-6">
+                <h1 className="shrink-0 text-center text-2xl font-bold uppercase leading-[0.95] sm:text-4xl md:text-6xl">
                     Specialization
                 </h1>
-                <div className="h-px w-full bg-black" />
+                <div className="hidden h-px w-full bg-black md:block" />
             </header>
 
-            <div className="w-full grid grid-cols-1 gap-8 py-12 px-28 md:grid-cols-2">
+            <div className="w-full grid grid-cols-1 gap-8 py-6 md:py-12 md:px-28 md:grid-cols-2">
                 {specializations.map((item, index) => (
                     <SpecializeCard
                         key={item.title}

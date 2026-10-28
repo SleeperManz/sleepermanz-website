@@ -29,22 +29,26 @@ const tools = [
 
 export default function Capabilities() {
     return (
-        <section id="capabilities" className="flex w-full flex-col gap-6 my-6">
-            <header className="flex flex-row items-center gap-6 mb-6">
-                <h1 className="shrink-0 text-center text-5xl font-bold uppercase leading-[0.95] md:text-6xl">
+        <section id="capabilities" className="flex w-full flex-col gap-6 my-4 md:my-6">
+            <header className="flex flex-row items-center justify-center gap-3 mb-2 md:gap-6 md:mb-6">
+                <h1 className="shrink-0 text-center text-2xl font-bold uppercase leading-[0.95] sm:text-4xl md:text-6xl">
                     Capabilities
                 </h1>
-                <div className="h-px w-full bg-black" />
+                <div className="hidden h-px w-full bg-black md:block" />
             </header>
 
-            <div className="flex w-full flex-col gap-14 py-12 px-28 md:flex-row">
-                {/* Gambar tunggal: mengambil sisa lebar */}
-                <div className="relative isolate h-fit flex-1/4">
+            {/*
+              Mobile: gambar di atas, daftar kemampuan di bawah, tanpa padding samping.
+              Desktop (md ke atas): sejajar ke samping dengan padding besar (px-28 di lg).
+            */}
+            <div className="flex w-full flex-col gap-8 py-4 px-0 md:flex-row md:gap-14 md:py-12 md:px-12 lg:px-28">
+                {/* Gambar tunggal */}
+                <div className="relative isolate h-fit w-full md:w-auto md:flex-1/4">
                     <img
                         src="src/assets/etc/stylish-background.png"
                         alt="stylish-background"
                         aria-hidden="true"
-                        className="absolute inset-0 h-full w-full translate-x-1 translate-y-1 -z-1"
+                        className="absolute inset-0 h-[98%] w-[98%] translate-x-2.25 translate-y-2 -z-1 md:w-full md:h-full md:translate-x-1 md:translate-y-1"
                     />
 
                     {
@@ -56,21 +60,29 @@ export default function Capabilities() {
                                 draggable={false}
                             />
                             :
-                            <div className="w-270 h-225 bg-gray-400 border-3 border-black rounded-lg" />
+                            <div className="aspect-6/5 w-full bg-gray-400 border-3 border-black rounded-lg md:aspect-auto md:w-270 md:h-225" />
                     }
                 </div>
 
-                <div className="flex-1 flex flex-col gap-6 md:w-72 md:shrink-0">
+                {/*
+                  Daftar kemampuan.
+                  Mobile: 3 kategori berjajar ke samping (flex-row), masing-masing berbagi lebar sama
+                  (flex-1 + min-w-0) dan teks boleh turun baris. Desktop: tersusun ke bawah.
+                */}
+                <div className="flex flex-row justify-between gap-3 md:flex-col md:justify-start md:gap-6 md:w-72 md:shrink-0 md:flex-1">
                     {categories.map((category) => (
-                        <div key={category.title} className="flex flex-col gap-4">
-                            <h2 className="text-4xl font-bold uppercase">
+                        <div
+                            key={category.title}
+                            className="flex min-w-0 flex-1 flex-col gap-2 md:flex-none md:gap-4"
+                        >
+                            <h2 className="wrap-break-word text-xs font-bold uppercase sm:text-lg md:text-4xl">
                                 {category.title}
                             </h2>
-                            <ul className="flex flex-col gap-1 pl-3 text-3xl">
+                            <ul className="flex flex-col gap-1 pl-0 text-[11px] sm:pl-3 sm:text-base md:text-3xl">
                                 {category.items.map((item) => (
-                                    <li key={item} className="flex items-center gap-2">
+                                    <li key={item} className="flex items-start gap-1 sm:items-center sm:gap-2">
                                         <span aria-hidden="true">•</span>
-                                        {item}
+                                        <span className="wrap-break-word">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -79,18 +91,19 @@ export default function Capabilities() {
                 </div>
             </div>
 
-            {/* Tools */}
-            <div className="mx-18 relative">
+            {/* Tools: margin kanan kecil di mobile untuk ruang bayangan, margin samping besar di desktop */}
+            <div className="relative mr-2 md:mx-18">
                 <img
                     src="src/assets/etc/stylish-background-wide.png"
                     alt="stylish-background-wide"
-                    className="absolute inset-0 w-full h-full translate-x-2 translate-y-2 -z-1"
+                    className="absolute inset-0 w-full h-full translate-x-0.5 translate-y-1 -z-1 md:translate-x-2 md:translate-y-2"
                 />
 
-                <div className="w-full h-full flex flex-col items-center gap-8 border-3 border-black bg-white p-6">
-                    <h2 className="text-5xl font-bold uppercase">Tools</h2>
+                <div className="w-full h-full flex flex-col items-center gap-4 border-3 border-black bg-white p-4 md:gap-8 md:p-6">
+                    <h2 className="text-2xl font-bold uppercase md:text-5xl">Tools</h2>
 
-                    <ul className="flex flex-row flex-wrap w-full items-center justify-evenly gap-6">
+                    {/* Mobile: grid 4 kolom (8 ikon = 2 baris), ikon 50px. Desktop: baris fleksibel seperti sebelumnya */}
+                    <ul className="grid w-full grid-cols-4 justify-items-center gap-3 md:flex md:flex-row md:flex-wrap md:items-center md:justify-evenly md:gap-6">
                         {tools.map((tool) => (
                             <li key={tool.name}>
                                 {
@@ -99,11 +112,11 @@ export default function Capabilities() {
                                             src={tool.icon}
                                             alt={tool.name}
                                             title={tool.name}
-                                            className="h-22.5 w-22.5 object-contain"
+                                            className="h-12.5 w-12.5 object-contain md:h-22.5 md:w-22.5"
                                             draggable={false}
                                         />
                                         :
-                                        <div className="h-22.5 w-22.5 object-contain rounded-lg bg-gray-400" />
+                                        <div className="h-12.5 w-12.5 rounded-lg bg-gray-400 md:h-22.5 md:w-22.5" />
                                 }
                             </li>
                         ))}

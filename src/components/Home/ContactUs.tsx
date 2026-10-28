@@ -10,23 +10,25 @@ const socials = [
 
 export default function ContactUs() {
     return (
-        <section id="contact-us" className="flex w-full flex-col items-center gap-12 mb-32">
-            <header className="flex w-full flex-row items-center justify-center gap-4 mb-4">
+        <section id="contact-us" className="flex w-full flex-col items-center gap-6 mb-12 md:gap-12 md:mb-32">
+            <header className="flex w-full flex-row items-center justify-center gap-3 mb-2 md:gap-4 md:mb-4">
                 <div className="h-px w-full bg-black" />
-                <h1 className="shrink-0 text-center text-6xl font-bold uppercase leading-[0.95]">
+                <h1 className="shrink-0 text-center text-2xl font-bold uppercase leading-[0.95] sm:text-4xl md:text-6xl">
                     {"[ Contact Us ]"}
                 </h1>
                 <div className="h-px w-full bg-black" />
             </header>
 
+            {/* break-all: email panjang boleh terpotong baris agar tidak melebihi lebar layar */}
             <a
                 href={`mailto:${EMAIL}`}
-                className="text-3xl transition-opacity hover:opacity-70"
+                className="break-all text-center text-sm transition-opacity hover:opacity-70 sm:text-xl md:text-3xl"
             >
                 {EMAIL}
             </a>
 
-            <ul className="flex flex-row items-center justify-center gap-20">
+            {/* Mobile: ikon 40px dengan jarak kecil agar 4 ikon muat sebaris */}
+            <ul className="flex flex-row items-center justify-center gap-6 sm:gap-12 md:gap-20">
                 {socials.map((social) => (
                     <li key={social.name}>
                         <a
@@ -39,7 +41,7 @@ export default function ContactUs() {
                             <img
                                 src={social.icon}
                                 alt={social.name}
-                                className="w-14 object-contain"
+                                className="w-10 object-contain sm:w-12 md:w-14"
                                 draggable={false}
                             />
                         </a>

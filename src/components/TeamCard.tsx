@@ -6,10 +6,9 @@ type TeamMember = {
 
 export default function TeamCard({ member }: { member: TeamMember }) {
     return (
-        <div className="flex w-40 flex-col items-center">
-            <div
-                className={`h-50 w-50`}
-            >
+        // Mobile: kartu & foto 128px agar 2 anggota muat sebaris. Desktop: ukuran seperti sebelumnya
+        <div className="flex w-32 flex-col items-center md:w-40">
+            <div className="h-32 w-32 md:h-50 md:w-50">
                 {member.image && (
                     <img
                         src={member.image}
@@ -20,10 +19,10 @@ export default function TeamCard({ member }: { member: TeamMember }) {
                 )}
             </div>
 
-            <h3 className="mt-3 text-[28px] font-bold uppercase leading-tight">
+            <h3 className="mt-2 text-lg font-bold uppercase leading-tight md:mt-3 md:text-[28px]">
                 {member.name}
             </h3>
-            <p className="text-[24px]">{member.role}</p>
+            <p className="text-sm md:text-[24px]">{member.role}</p>
         </div>
     )
 }
