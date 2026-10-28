@@ -39,22 +39,34 @@ export default function OurWork() {
     return (
         <section id="our-work" className="flex w-full flex-col">
             {/* Bagian atas: judul, deskripsi, tab kategori */}
-            <div className="flex w-full flex-col items-center gap-4 px-6 py-6">
-                <header className="flex w-full flex-row items-center gap-6">
-                    <div className="h-px w-full bg-black" />
-                    <h1 className="shrink-0 text-center text-5xl font-bold uppercase leading-[0.95] md:text-6xl">
+            <div className="flex w-full flex-col items-center gap-3 px-0 py-4 md:gap-4 md:px-6 md:py-6">
+                <header className="w-full flex flex-row items-center justify-center gap-3 mb-2 md:gap-6 md:mb-6">
+                    <div className="hidden h-px w-full bg-black md:block" />
+                    <h1 className="shrink-0 text-center text-2xl font-bold uppercase leading-[0.95] sm:text-4xl md:text-6xl">
                         Our Work
                     </h1>
-                    <div className="h-px w-full bg-black" />
+                    <div className="hidden h-px w-full bg-black md:block" />
                 </header>
 
-                <p className="text-center text-[32px] leading-snug">
-                    A bunch of things we&apos;ve made along the way.
-                    <br />
-                    Games, art, animation, and experiments from our studio.
+                {/*
+                  Mulai layar sm, tiap kalimat tampil sebagai blok sendiri (2 baris).
+                  Di mobile keduanya mengalir sebagai satu paragraf.
+                */}
+                <p className="text-center text-sm leading-snug sm:text-xl md:text-[32px]">
+                    <span className="sm:block">
+                        A bunch of things we&apos;ve made along the way.
+                    </span>{" "}
+                    <span className="sm:block">
+                        Games, art, animation, and experiments from our studio.
+                    </span>
                 </p>
 
-                <div className="flex flex-row flex-wrap items-center justify-center gap-4 p-6">
+                {/*
+                  Tab kategori: flex-row sejak awal (tidak berganti grid <-> flex), jadi susunan desktop
+                  sama seperti semula. Yang berbeda hanya lebar tombol:
+                  mobile = separuh baris (2 per baris), desktop = 250 x 50 px.
+                */}
+                <div className="w-full grid grid-cols-2 md:flex md:flex-row md:flex-wrap items-center justify-center gap-3 p-0 md:gap-4 md:p-6">
                     {categories.map((category) => {
                         const isActive = category.id === activeId
 
@@ -64,7 +76,7 @@ export default function OurWork() {
                                 type="button"
                                 aria-pressed={isActive}
                                 onClick={() => setActiveId(category.id)}
-                                className={`w-62.5 h-12.5 relative`}
+                                className="relative h-10 md:h-[50px] md:w-[250px]"
                             >
                                 <img
                                     src="src/assets/etc/stylish-background-wide.png"
@@ -75,7 +87,7 @@ export default function OurWork() {
                                         }`}
                                 />
 
-                                <div className={`w-full h-full flex flex-row items-center justify-center cursor-pointer border border-black px-4 py-1.5 text-base font-bold uppercase transition-colors ${isActive
+                                <div className={`w-full h-full flex flex-row items-center justify-center cursor-pointer border border-black px-2 py-1.5 text-xs font-bold uppercase transition-colors md:px-4 md:text-base ${isActive
                                     ? "bg-[#1F4FC0] text-white"
                                     : "bg-white text-black hover:bg-gray-100"
                                     }`}
@@ -88,9 +100,9 @@ export default function OurWork() {
                 </div>
             </div>
 
-            {/* Galeri */}
-            <div className="w-full mb-24">
-                <div className="grid grid-cols-3 gap-3 px-12 py-4">
+            {/* Galeri: 2 kolom di mobile, 3 kolom di desktop */}
+            <div className="w-full mb-12 md:mb-24">
+                <div className="grid grid-cols-2 gap-2 px-0 py-4 md:grid-cols-3 md:gap-3 md:px-12">
                     {items.map((item, index) => (
                         <div
                             key={item.src ?? index}
