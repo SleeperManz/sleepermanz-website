@@ -166,31 +166,32 @@ const groups: ServiceGroup[] = [
 
 export default function WeBuild() {
     return (
-        <section id="services" className="flex w-full flex-col gap-4 mb-12">
+        <section id="services" className="flex w-full flex-col gap-4 mb-8 md:mb-12">
             <div className="flex flex-col items-center justify-center">
-                <header className="flex w-full flex-row items-center gap-6 mb-12">
-                    <div className="h-px w-full bg-black" />
-                    <h1 className="shrink-0 text-center text-5xl font-bold uppercase leading-[0.95] md:text-6xl">
+                <header className="flex w-full flex-row items-center justify-center gap-3 mb-4 md:gap-6 md:mb-12">
+                    <div className="hidden h-px w-full bg-black md:block" />
+                    <h1 className="shrink-0 text-center text-2xl font-bold uppercase leading-[0.95] sm:text-4xl md:text-6xl">
                         What Can We
                         <br />
                         Build For You?
                     </h1>
-                    <div className="h-px w-full bg-black" />
+                    <div className="hidden h-px w-full bg-black md:block" />
                 </header>
 
-                <p className="max-w-3xl text-center text-[32px] leading-snug">
+                <p className="max-w-3xl text-center text-sm leading-snug sm:text-xl md:text-[32px]">
                     From game development to art and animation, we help turn
                     ideas into playable experiences.
                 </p>
             </div>
 
             {groups.map((group) => (
-                <div key={group.title} className="w-full flex flex-col items-center justify-center gap-8 my-8">
-                    <h2 className="text-5xl font-bold uppercase leading-none">
+                <div key={group.title} className="w-full flex flex-col items-center justify-center gap-4 my-4 md:gap-8 md:my-8">
+                    <h2 className="text-center text-xl font-bold uppercase leading-none sm:text-3xl md:text-5xl">
                         {`[ ${group.title} ]`}
                     </h2>
 
-                    <div className="w-full grid grid-cols-1 gap-12 py-12 px-24 md:grid-cols-2">
+                    {/* Padding samping besar hanya untuk desktop lebar (lg ke atas) */}
+                    <div className="w-full grid grid-cols-1 gap-8 py-4 px-0 md:grid-cols-2 md:gap-12 md:py-12 md:px-12 lg:px-24">
                         {group.services.map((service) => (
                             <ServiceCard key={service.title} {...service} />
                         ))}
