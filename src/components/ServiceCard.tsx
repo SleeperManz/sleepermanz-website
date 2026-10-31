@@ -1,5 +1,6 @@
 import publicAsset from "../utils/publicAsset"
 import stylishBackground from "../assets/etc/stylish-background.png"
+import FullView from "./etc/FullView"
 
 type ServiceCardProps = {
     title: string
@@ -68,9 +69,11 @@ export default function ServiceCard({
                                     isLast && remainder !== 0
                                         ? columns - remainder + 1
                                         : 1
+                                const mediaStyle =
+                                    span > 1 ? { gridColumn: `span ${span}` } : undefined
 
                                 return (
-                                    <img
+                                    <FullView
                                         key={src}
                                         src={publicAsset(src)}
                                         alt={
@@ -78,13 +81,9 @@ export default function ServiceCard({
                                                 ? `${title} - ${index + 1}`
                                                 : title
                                         }
-                                        style={
-                                            span > 1
-                                                ? { gridColumn: `span ${span}` }
-                                                : undefined
-                                        }
+                                        mediaType={/\.(mp4|mov)$/i.test(src) ? "video" : "image"}
+                                        style={mediaStyle}
                                         className="h-full min-h-0 w-full object-cover"
-                                        draggable={false}
                                     />
                                 )
                             })}
