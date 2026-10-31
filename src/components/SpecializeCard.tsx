@@ -1,3 +1,5 @@
+import stylishBackgroundWide from "../assets/etc/stylish-background-wide.png"
+
 type SpecializeCardProps = {
     number: string // contoh: "01"
     title: string
@@ -14,7 +16,7 @@ export default function SpecializeCard({
     return (
         <article className="w-full h-full relative">
             <img
-                src="src/assets/etc/stylish-background-wide.png"
+                src={stylishBackgroundWide}
                 alt="stylish-background-wide"
                 className="absolute inset-0 w-full h-full translate-x-0.5 translate-y-0.5 -z-1 md:translate-x-1 md:translate-y-1"
             />

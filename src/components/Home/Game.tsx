@@ -1,3 +1,4 @@
+import stylishBackground from "../../assets/etc/stylish-background.png"
 import GameImage from "../GameImage"
 
 type GameStatus = "playstore" | "steam" | "itch" | "development"
@@ -65,6 +66,19 @@ const games: GameItem[] = [
         ],
     },
     {
+        title: "Hand Royal",
+        description: LOREM,
+        tags: ["Idle Game", "Restaurant", "Cute"],
+        status: "itch",
+        href: "#",
+        main: "/games/hand-royal/main.png",
+        thumbnails: [
+            "/games/hand-royal/1.png",
+            "/games/hand-royal/2.png",
+            "/games/hand-royal/3.png",
+        ],
+    },
+    {
         title: "Last Hope : Emily",
         description: LOREM,
         tags: ["Idle Game", "Restaurant", "Cute"],
@@ -79,17 +93,11 @@ const games: GameItem[] = [
         main: "/games/last-bell/main.png",
     },
     {
-        title: "Hand Royal",
+        title: "Project: Harvestbound",
         description: LOREM,
         tags: ["Idle Game", "Restaurant", "Cute"],
-        status: "itch",
-        href: "#",
-        main: "/games/hand-royal/main.png",
-        thumbnails: [
-            "/games/hand-royal/1.png",
-            "/games/hand-royal/2.png",
-            "/games/hand-royal/3.png",
-        ],
+        status: "development",
+        main: "/games/in-development/1.png",
     },
 ]
 
@@ -118,7 +126,7 @@ export default function Game() {
                             className="relative border-2 border-black"
                         >
                             <img
-                                src="src/assets/etc/stylish-background.png"
+                                src={stylishBackground}
                                 alt="stylish-background"
                                 className="absolute inset-0 w-full h-full translate-x-1 translate-y-1 -z-1"
                             />

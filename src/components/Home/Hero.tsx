@@ -1,12 +1,15 @@
 import ImageSlider from "../etc/ImageSlider"
+import stylishBackground from "../../assets/etc/stylish-background.png"
 
 // Ganti dengan path gambar kamu (taruh di folder `public`)
 const slides = [
-    "/slides/slide-1.png",
-    "/slides/slide-2.png",
-    "/slides/slide-3.png",
-    "/slides/slide-4.png",
-    "/slides/slide-5.png",
+    "/games/block-flow/main.png",
+    "/games/feather-rogue/main.png",
+    "/games/hand-royal/main.png",
+    "/games/last-bell/main.png",
+    "/games/last-hope/main.png",
+    "/games/lets-open/main.png",
+    "/games/in-development/1.png",
 ]
 
 const stats = [
@@ -30,7 +33,7 @@ export default function Hero() {
             {/* Slider + statistik */}
             <div className="relative">
                 <img
-                    src="src/assets/etc/stylish-background.png"
+                    src={stylishBackground}
                     alt="stylish-background"
                     className="absolute inset-0 w-full h-full translate-x-0.5 translate-y-0.5 -z-1 md:translate-x-1 md:translate-y-1"
                 />

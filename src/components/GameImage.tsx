@@ -1,3 +1,5 @@
+import publicAsset from "../utils/publicAsset"
+
 type GameImageProps = {
     main: string
     thumbnails?: string[]
@@ -14,7 +16,7 @@ export default function GameImage({ main, thumbnails = [], title }: GameImagePro
         return (
             <div className="flex flex-1 flex-col">
                 <img
-                    src={main}
+                    src={publicAsset(main)}
                     alt={`${title} - cover`}
                     className="aspect-video w-full flex-1 object-cover"
                     draggable={false}
@@ -30,7 +32,7 @@ export default function GameImage({ main, thumbnails = [], title }: GameImagePro
         <div className="flex flex-col gap-1">
             {/* Gambar utama */}
             <img
-                src={main}
+                src={publicAsset(main)}
                 alt={`${title} - cover`}
                 className="aspect-video w-full object-cover"
                 draggable={false}
@@ -42,7 +44,7 @@ export default function GameImage({ main, thumbnails = [], title }: GameImagePro
                     src ? (
                         <img
                             key={index}
-                            src={src}
+                            src={publicAsset(src)}
                             alt={`${title} - screenshot ${index + 1}`}
                             className="aspect-video w-full object-cover"
                             draggable={false}

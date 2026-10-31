@@ -1,3 +1,5 @@
+import publicAsset from "../../utils/publicAsset"
+
 const EMAIL = "sleepermanz102@gmail.com"
 
 // Ganti href dengan link sosial media studio, dan siapkan ikon SVG/PNG sendiri di `public/socials/`
@@ -39,7 +41,7 @@ export default function ContactUs() {
                             className="block transition-transform hover:scale-110"
                         >
                             <img
-                                src={social.icon}
+                                src={publicAsset(social.icon)}
                                 alt={social.name}
                                 className="w-10 object-contain sm:w-12 md:w-14"
                                 draggable={false}

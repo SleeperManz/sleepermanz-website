@@ -1,3 +1,7 @@
+import publicAsset from "../../utils/publicAsset"
+import stylishBackground from "../../assets/etc/stylish-background.png"
+import stylishBackgroundWide from "../../assets/etc/stylish-background-wide.png"
+
 const capabilities = "/capabilities/main.png";
 
 const categories = [
@@ -45,7 +49,7 @@ export default function Capabilities() {
                 {/* Gambar tunggal */}
                 <div className="relative isolate h-fit w-full md:w-auto md:flex-1/4">
                     <img
-                        src="src/assets/etc/stylish-background.png"
+                        src={stylishBackground}
                         alt="stylish-background"
                         aria-hidden="true"
                         className="absolute inset-0 h-[98%] w-[98%] translate-x-2.25 translate-y-2 -z-1 md:w-full md:h-full md:translate-x-1 md:translate-y-1"
@@ -54,7 +58,7 @@ export default function Capabilities() {
                     {
                         capabilities ?
                             <img
-                                src={capabilities}
+                                src={publicAsset(capabilities)}
                                 alt="capabilities-image"
                                 className="block w-full border-3 border-black bg-white rounded-lg"
                                 draggable={false}
@@ -94,7 +98,7 @@ export default function Capabilities() {
             {/* Tools: margin kanan kecil di mobile untuk ruang bayangan, margin samping besar di desktop */}
             <div className="relative mr-2 md:mx-18">
                 <img
-                    src="src/assets/etc/stylish-background-wide.png"
+                    src={stylishBackgroundWide}
                     alt="stylish-background-wide"
                     className="absolute inset-0 w-full h-full translate-x-0.5 translate-y-1 -z-1 md:translate-x-2 md:translate-y-2"
                 />
@@ -109,7 +113,7 @@ export default function Capabilities() {
                                 {
                                     tool.icon ?
                                         <img
-                                            src={tool.icon}
+                                            src={publicAsset(tool.icon)}
                                             alt={tool.name}
                                             title={tool.name}
                                             className="h-12.5 w-12.5 object-contain md:h-22.5 md:w-22.5"

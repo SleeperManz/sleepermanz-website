@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import publicAsset from "../utils/publicAsset"
 
 const footerLinks = [
     { label: "Home", href: "/" },
@@ -18,7 +19,7 @@ export default function Footer() {
                 {/* Logo + nama studio */}
                 <Link to="/" className="flex shrink-0 flex-row items-center gap-3">
                     <img
-                        src="/logo/sleepermanz-horizontal.svg"
+                        src={publicAsset("/logo/sleepermanz-horizontal.svg")}
                         alt="sleepermanz-logo"
                         className="h-20 w-auto max-w-full object-contain md:h-36"
                         draggable={false}

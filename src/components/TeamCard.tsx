@@ -1,3 +1,5 @@
+import publicAsset from "../utils/publicAsset"
+
 type TeamMember = {
     name: string
     role: string
@@ -11,7 +13,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
             <div className="h-32 w-32 md:h-50 md:w-50">
                 {member.image && (
                     <img
-                        src={member.image}
+                        src={publicAsset(member.image)}
                         alt={member.name}
                         className="h-full w-full object-cover"
                         draggable={false}

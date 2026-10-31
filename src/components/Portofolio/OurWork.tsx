@@ -1,4 +1,5 @@
 import { useState } from "react"
+import stylishBackgroundWide from "../../assets/etc/stylish-background-wide.png"
 
 type WorkItem = {
     src?: string // kosong = placeholder abu-abu
@@ -79,7 +80,7 @@ export default function OurWork() {
                                 className="relative h-10 md:h-[50px] md:w-[250px]"
                             >
                                 <img
-                                    src="src/assets/etc/stylish-background-wide.png"
+                                    src={stylishBackgroundWide}
                                     alt="stylish-background-wide"
                                     className={`absolute inset-0 w-full h-full -z-1 ${isActive
                                         ? "translate-x-0 translate-y-1"

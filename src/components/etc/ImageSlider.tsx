@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import publicAsset from "../../utils/publicAsset"
 
 type ImageSliderProps = {
     images: string[]
@@ -35,7 +36,7 @@ export default function ImageSlider({
                 {images.map((src, index) => (
                     <img
                         key={src}
-                        src={src}
+                        src={publicAsset(src)}
                         alt={`slide-${index + 1}`}
                         className="h-full w-full shrink-0 object-cover"
                         draggable={false}

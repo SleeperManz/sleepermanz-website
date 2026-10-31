@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
+import publicAsset from "../utils/publicAsset"
+import stylishBackground from "../assets/etc/stylish-background.png"
 import SidePanel from "./etc/SidePanel"
 
 const navItems = [
@@ -18,7 +20,7 @@ function JoinUsButton({ onClick }: { onClick?: () => void }) {
     return (
         <div className="relative isolate">
             <img
-                src="src/assets/etc/stylish-background.png"
+                src={stylishBackground}
                 alt="stylish-background"
                 aria-hidden="true"
                 className="absolute inset-0 w-full h-full translate-x-px translate-y-px -z-1"
@@ -52,7 +54,7 @@ export default function Navbar() {
         <nav className="w-full bg-[#E9E9E9] flex flex-row items-center justify-between px-4 py-3 rounded-lg">
             <Link to="/" className="flex items-center">
                 <img
-                    src="/logo/sleepermanz-vertical.svg"
+                    src={publicAsset("/logo/sleepermanz-vertical.svg")}
                     alt="sleepermanz-logo"
                     className="h-12 w-auto object-contain"
                 />

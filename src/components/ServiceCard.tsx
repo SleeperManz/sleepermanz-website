@@ -1,3 +1,6 @@
+import publicAsset from "../utils/publicAsset"
+import stylishBackground from "../assets/etc/stylish-background.png"
+
 type ServiceCardProps = {
     title: string
     description: string
@@ -40,7 +43,7 @@ export default function ServiceCard({
         // col-span harus di elemen terluar ini, karena inilah yang menjadi item langsung dari grid di WeBuild
         <article className={`relative w-full ${wide ? "md:col-span-2" : ""}`}>
             <img
-                src="src/assets/etc/stylish-background.png"
+                src={stylishBackground}
                 alt="stylish-background"
                 className="absolute inset-0 w-full h-full translate-x-0.5 translate-y-0.5 -z-1 md:translate-x-1 md:translate-y-1"
             />
@@ -69,7 +72,7 @@ export default function ServiceCard({
                                 return (
                                     <img
                                         key={src}
-                                        src={src}
+                                        src={publicAsset(src)}
                                         alt={
                                             gallery.length > 1
                                                 ? `${title} - ${index + 1}`
